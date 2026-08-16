@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scalbuenoe=1.0">
+    <title>Alerta DeepFake</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="grid-bg"></div>
+    <div class="glow"></div>
+    <header>
+        <button id="btnMenu" class="menu-btn">☰</button>
+       <span class="logo">Alerta DeepFake</span>
+    </header>
+   <nav id="sidebar">
+  <a href="#">Inicio</a>
+
+  <span class="categoria">Aprende</span>
+  <a href="#">¿Qué es un Deepfake?</a>
+  <a href="#">Casos Simulados</a>
+
+  <span class="categoria">Reportar</span>
+  <a href="#">Reportar</a>
+</nav>
+<main>
+  <center><h1>Alerta Deepfake</h1></center>
+  <center><p>No todo lo que ves es lo que parece</p>
+    <div class="face-wrap">
+  <svg viewBox="0 0 220 220">
+  <defs>
+  <clipPath id="mitad-izquierda">
+    <rect x="0" y="0" width="110" height="220" />
+  </clipPath>
+</defs>
+
+<!-- LADO REAL (izquierda) -->
+<g clip-path="url(#mitad-izquierda)">
+  <path d="M 110 30 A 80 80 0 0 0 110 190" stroke="var(--text)" stroke-width="2" fill="none" />
+  <circle cx="80" cy="95" r="6" fill="var(--text)" />
+  <circle cx="140" cy="95" r="6" fill="var(--text)" />
+  <path d="M 80 140 Q 110 160 140 140" stroke="var(--text)" stroke-width="2" fill="none" />
+</g>
+
+<!-- LADO SINTÉTICO (derecha) -->
+<g class="face-synth">
+  <path d="M 110 30 A 80 80 0 0 1 110 190" stroke="var(--cyan)" stroke-width="2" fill="none" />
+  <path d="M 120 90 L 132 90 M 128 84 L 128 100" stroke="var(--cyan)" stroke-width="1.4" />
+  <path d="M 140 145 L 165 148 M 150 152 L 160 145" stroke="var(--cyan)" stroke-width="1.2" stroke-linecap="round" />
+  <line x1="110" y1="30" x2="110" y2="190" stroke="var(--cyan)" stroke-width="1" stroke-dasharray="2 4" />
+</g>
+
+</svg>
+<defs>
+  <clipPath id="mitad-izquierda">
+    <rect x="0" y="0" width="110" height="220" />
+  </clipPath>
+</defs>
+</div>
+</main>
+
+
+
+<script>
+    const btnMenu =document.getElementById('btnMenu');
+    const sidebar=document.getElementById('sidebar');
+    btnMenu.addEventListener('click',function(){
+        sidebar.classList.toggle('abierto');
+    });
+    
+    const links=sidebar.querySelectorAll('a');
+    links.forEach(function(link){
+    link.addEventListener('click',function(){
+        sidebar.classList.remove('abierto');
+    });
+});
+
+
+</script>
+
+
+
+
+</body>
+</html>
