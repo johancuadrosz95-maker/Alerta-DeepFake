@@ -289,3 +289,21 @@ main strong {
   border-radius: 30px;
 }
 
+.paso {
+    margin: 25px 0;
+    padding-left: 20px;
+}
+
+.paso h3 {
+    color: white;
+    margin-bottom: 8px;
+}
+
+.paso p {
+    color: #b8c0cc;
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+
+
