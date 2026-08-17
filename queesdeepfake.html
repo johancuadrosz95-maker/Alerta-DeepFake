@@ -17,23 +17,24 @@
   <a href="#">Inicio</a>
 
  <span class="categoria">Aprende</span>
-  <a href="#">Inteligencia Artificial Generativa</a>
-  <a href="#">¿Qué es un Deepfake?</a>
-  <a href="#">Clasificacion de contenido falso</a>
-  <a href="#">Datos Personales y Biometrios</a>
+  <a href="iagenerativa.html">Inteligencia Artificial Generativa</a>
+  <a href="queesdeepfake.html">¿Qué es un Deepfake?</a>
+  <a href="clascontfals">Clasificacion de contenido falso</a>
+  <a href="datospb">Datos Personales y Biometrios</a>
 
   <span class="categoria">Detecta y Actua</span>
-  <a href="#">Casos Simulados</a>
-  <a href="#">Lista de Verificacion</a>
-  <a href="#">Ruta de Actuacion</a>
-   <a href="#" class="btn-reportar">🛡️ Reportar un Caso</a>
+  <a href="casossimulados.html">Casos Simulados</a>
+  <a href="listaverificacion">Lista de Verificacion</a>
+  <a href="rutaactuacion">Ruta de Actuacion</a>
+  <a href="reportarcaso" class="btn-reportar">🛡️ Reportar un Caso</a>
+  
   <span class="categoria">Marco Legal</span>
-  <a href="#">Normativa Colombiana</a>
-  <a href="#">Recomendaciones de Seguridad</a>
+  <a href="normativacolombiana">Normativa Colombiana</a>
+  <a href="recomendacionesseguridad">Recomendaciones de Seguridad</a>
 </nav>
 
 <main>
-    <span class="Kicker">Aprende 02</span>
+    <span class="kicker">Aprende 02</span>
     <h1>¿Qué es un Deepfake?</h1>
     <p class="intro">
 
@@ -82,12 +83,68 @@
       </div>
     </div>
   </section>
+
+
   <section>
-    <h2><span class="numero">3</span> Un dato que ayuda a estar alerta</h2>
+    <h2><span class="numero">3</span> ¿Cómo se crea un DeepFake?</h2>
+    
+    <div class="paso">
+        <span class="numero">1</span>
+        <div class="texto-paso">
+            <h3> Recolección de datos</h3>
+            <p>Se reúnen muchas fotos, videos o audios reales de la persona a imitar.</p>
+    </div>
+   </div>
+
+   
+      <div class="paso">
+        <span class="numero">2</span>
+        <div class="texto-paso">
+           <h3>Entrenamiento del modelo</h3>
+           <p>La IA analiza esos ejemplos y aprende los patrones del rostro, la voz o los gestos.</p>
+    </div>
+  </div>
+
+    <div class="paso">
+        <span class="numero">3</span>
+        <div class="texto-paso">
+          <h3 Generación de contenido nuevo</h3>
+          <p>Con lo aprendido, el sistema produce imagen, audio o video inéditos que imitan a la persona.</p>
+      </div>
+    </div>
+
+    <div class="paso">
+        <span class="numero">4</span>
+        <div class="texto-paso">
+    <h3> Ajuste y difusión</h3>
+      <p>El resultado se refina para que sea más convincente, y luego se comparte muchas veces con fines de engaño.</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <section>
+    <h2><span class="numero">4</span> Un dato que ayuda a estar alerta</h2>
     <div class="caja-clave">
       <p><strong>Dato clave:</strong> ningún deepfake es 100% perfecto. Casi siempre queda
-      alguna señal —un parpadeo raro, un audio desincronizado, una sombra que no cuadra—
-      que permite identificarlo si se sabe qué buscar.</p>
+
+
+      alguna señal —un parpadeo raro, un audio desincronizado, una sombra que no cuadra—que permite identificarlo si se sabe qué buscar.</p>
     </div>
   </section>
 
@@ -96,4 +153,27 @@
     <a href="clasificacioncontenidofalso.html">Ver clasificación →</a>
   </div>
 
+
 </main>
+
+</main>
+
+<script>
+    const btnMenu =document.getElementById('btnMenu');
+    const sidebar=document.getElementById('sidebar');
+    btnMenu.addEventListener('click',function(){
+        sidebar.classList.toggle('abierto');
+    });
+    
+    const links=sidebar.querySelectorAll('a');
+    links.forEach(function(link){
+    link.addEventListener('click',function(){
+        sidebar.classList.remove('abierto');
+    });
+});
+
+
+</script>
+</body>
+</html>
+

@@ -274,25 +274,67 @@ main strong {
   opacity: 0.85;
 }
 
-
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 5025f9c2e32322031ec45b63f083897d01b9cad0
-.btn-reportar {
-  display: block;
-  text-align: center;
-  background: #ef5b6f;
-  color: white;
-  font-weight: 700;
-  padding: 14px 20px;
-  margin: 16px 20px;
-  border-radius: 30px;
+.tarjeta-caso {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 500px;
+  margin: 24px auto;
 }
-<<<<<<< HEAD
->>>>>>> b893afa2f35fec22d238d13ffb1a2c701f317278
-=======
->>>>>>> 5025f9c2e32322031ec45b63f083897d01b9cad0
+
+.tarjeta-tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.paso {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    margin: 30px 0;
+}
+
+.numero {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+
+    border: 2px solid #159eaa;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.texto-paso {
+    flex: 1;
+}
+
+.texto-paso h3 {
+    margin: 0 0 8px 0;
+    color: white;
+    font-size: 24px;
+}
+
+.texto-paso p {
+    margin: 0;
+    color: #b8bdc7;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
