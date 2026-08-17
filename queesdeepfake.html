@@ -17,25 +17,26 @@
   <a href="#">Inicio</a>
 
  <span class="categoria">Aprende</span>
-  <a href="#">Inteligencia Artificial Generativa</a>
-  <a href="#">¿Qué es un Deepfake?</a>
-  <a href="#">Clasificacion de contenido falso</a>
-  <a href="#">Datos Personales y Biometrios</a>
+  <a href="iagenerativa.html">Inteligencia Artificial Generativa</a>
+  <a href="queesdeepfake.html">¿Qué es un Deepfake?</a>
+  <a href="clascontfals">Clasificacion de contenido falso</a>
+  <a href="datospb">Datos Personales y Biometrios</a>
 
   <span class="categoria">Detecta y Actua</span>
-  <a href="#">Casos Simulados</a>
-  <a href="#">Lista de Verificacion</a>
-  <a href="#">Ruta de Actuacion</a>
-   <a href="#" class="btn-reportar">🛡️ Reportar un Caso</a>
+  <a href="casos-simulados">Casos Simulados</a>
+  <a href="listaverificacion">Lista de Verificacion</a>
+  <a href="rutaactuacion">Ruta de Actuacion</a>
+  <a href="reportarcaso" class="btn-reportar">🛡️ Reportar un Caso</a>
+  
   <span class="categoria">Marco Legal</span>
-  <a href="#">Normativa Colombiana</a>
-  <a href="#">Recomendaciones de Seguridad</a>
+  <a href="normativacolombiana">Normativa Colombiana</a>
+  <a href="recomendacionesseguridad">Recomendaciones de Seguridad</a>
 </nav>
 
 <main>
-    <span class="Kicker">Aprende 02</span>
+    <span class="kicker">Aprende 02</span>
     <h1>¿Qué es un Deepfake?</h1>
-    <p class="intro">
+    <p class"="intro">
 
     La palabra "deepfake" combina "deep learning" (aprendizaje profundo) y "fake" (falso).
     Es contenido video, audio o imagen generado con inteligencia artificial que hace
@@ -86,7 +87,11 @@
     <h2><span class="numero">3</span> Un dato que ayuda a estar alerta</h2>
     <div class="caja-clave">
       <p><strong>Dato clave:</strong> ningún deepfake es 100% perfecto. Casi siempre queda
+<<<<<<< HEAD
       alguna señal —un parpadeo raro, un audio desincronizado, una sombra que no cuadra—
+=======
+      alguna señal: un parpadeo raro, un audio desincronizado, una sombra que no cuadra y 
+>>>>>>> c4c2e29d476e59d4bddeeacfe0f83d9bc2d4c819
       que permite identificarlo si se sabe qué buscar.</p>
     </div>
   </section>
@@ -96,4 +101,27 @@
     <a href="clasificacioncontenidofalso.html">Ver clasificación →</a>
   </div>
 
+<<<<<<< HEAD
 </main>
+=======
+</main>
+
+<script>
+    const btnMenu =document.getElementById('btnMenu');
+    const sidebar=document.getElementById('sidebar');
+    btnMenu.addEventListener('click',function(){
+        sidebar.classList.toggle('abierto');
+    });
+    
+    const links=sidebar.querySelectorAll('a');
+    links.forEach(function(link){
+    link.addEventListener('click',function(){
+        sidebar.classList.remove('abierto');
+    });
+});
+
+
+</script>
+</body>
+</html>
+>>>>>>> c4c2e29d476e59d4bddeeacfe0f83d9bc2d4c819
