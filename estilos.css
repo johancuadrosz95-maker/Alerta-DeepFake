@@ -331,6 +331,10 @@ main strong {
     line-height: 1.5;
 }
 
-
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
 
