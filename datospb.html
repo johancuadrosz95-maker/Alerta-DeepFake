@@ -34,84 +34,127 @@
 </nav>
 
 <main>
-  <!-- Encabezado con tu clase kicker -->
-    <div class="kicker">APRENDE · 04</div>
-    <h1>Datos Personales y Biométricos</h1>
+  <div class="kicker">APRENDE · 04</div>
+  <h1>Datos Personales y Biométricos</h1>
+  <p class="intro">
+    Un deepfake no se crea de la nada: necesita datos reales de una persona —su rostro, su voz,
+    sus fotos— para generar contenido falso convincente. Entender qué son estos datos y cómo
+    protegerlos es la primera línea de defensa.
+  </p>
 
-  <!-- Layout de dos columnas -->
-  <div class="grid-datos">
-    
-    <!-- Columna Izquierda: Cómo explotan los datos -->
-    <section>
-      <h2>Cómo los deepfakes explotan estos datos</h2>
-      
-      <div class="paso">
-        <div class="icon-box">📷</div>
+  <section>
+    <h2>Cómo los deepfakes explotan estos datos</h2>
+    <div class="paso">
+      <div class="icon-box">📷</div>
+      <div class="texto-paso">
+        <h3>Fotos públicas de redes sociales</h3>
+        <p>Unas pocas imágenes bien iluminadas del rostro bastan para entrenar un modelo de intercambio de rostro.</p>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="icon-box">🎙️</div>
+      <div class="texto-paso">
+        <h3>Notas de voz o videos con audio</h3>
+        <p>Con solo unos segundos de voz real, es posible clonar el tono y ritmo de habla de una persona.</p>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="icon-box">🪪</div>
+      <div class="texto-paso">
+        <h3>Documentos de identidad</h3>
+        <p>Fotos de cédulas o pasaportes compartidas sin cuidado facilitan la suplantación de identidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>¿Qué tan expuestos están tus datos?</h2>
+    <p>Responde con honestidad — nadie más ve tus respuestas.</p>
+
+    <div class="test-panel">
+      <div class="test-pregunta" data-p="1">
+        <p>¿Tu perfil de redes sociales es público?</p>
+        <div class="switch-group">
+          <button class="switch-btn" data-val="si">Sí</button>
+          <button class="switch-btn" data-val="no">No</button>
+        </div>
+      </div>
+      <div class="test-pregunta" data-p="2">
+        <p>¿Has subido notas de voz o videos con tu voz claramente audible?</p>
+        <div class="switch-group">
+          <button class="switch-btn" data-val="si">Sí</button>
+          <button class="switch-btn" data-val="no">No</button>
+        </div>
+      </div>
+      <div class="test-pregunta" data-p="3">
+        <p>¿Alguna vez compartiste una foto de tu cédula o documento?</p>
+        <div class="switch-group">
+          <button class="switch-btn" data-val="si">Sí</button>
+          <button class="switch-btn" data-val="no">No</button>
+        </div>
+      </div>
+      <div class="test-pregunta" data-p="4">
+        <p>¿Participaste en algún "reto" de apps que transforman tu rostro?</p>
+        <div class="switch-group">
+          <button class="switch-btn" data-val="si">Sí</button>
+          <button class="switch-btn" data-val="no">No</button>
+        </div>
+      </div>
+      <div class="test-pregunta" data-p="5">
+        <p>¿Aceptas solicitudes de amistad de personas que no conoces?</p>
+        <div class="switch-group">
+          <button class="switch-btn" data-val="si">Sí</button>
+          <button class="switch-btn" data-val="no">No</button>
+        </div>
+      </div>
+
+      <button class="btn-calcular" id="btnCalcular">Ver mi nivel de exposición</button>
+
+      <div class="resultado" id="resultado">
+        <div class="nivel" id="nivelTexto"></div>
+        <div class="msg" id="mensajeTexto"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cómo proteger sus datos</h2>
+    <div class="checklist-panel">
+      <span class="tarjeta-tag">Interactive</span>
+      <label class="check-card">
+        <input type="checkbox">
+        <span class="checkbox-custom"></span>
         <div class="texto-paso">
-          <h3>Fotos públicas de redes sociales</h3>
-          <p>Unas pocas imágenes bien iluminadas del rostro bastan para entrenar un modelo de intercambio de rostro.</p>
+          <h3>Revisen la privacidad de sus redes</h3>
+          <p>Limiten quién puede ver y descargar sus fotos y videos.</p>
         </div>
-      </div>
-
-      <div class="paso">
-        <div class="icon-box">🎙️</div>
+      </label>
+      <label class="check-card">
+        <input type="checkbox">
+        <span class="checkbox-custom"></span>
         <div class="texto-paso">
-          <h3>Notas de voz o videos con audio</h3>
-          <p>Con solo unos segundos de voz real, es posible clonar el tono y ritmo de habla de una persona.</p>
+          <h3>Cuidado con retos virales de voz o rostro</h3>
+          <p>Muchas apps que "transforman" tu cara o voz almacenan esos datos sin que sea claro para qué se usan después.</p>
         </div>
-      </div>
-
-      <div class="paso">
-        <div class="icon-box">🪪</div>
+      </label>
+      <label class="check-card">
+        <input type="checkbox">
+        <span class="checkbox-custom"></span>
         <div class="texto-paso">
-          <h3>Documentos de identidad</h3>
-          <p>Fotos de cédulas o pasaportes compartidas sin cuidado facilitan la suplantación de identidad.</p>
+          <h3>No compartan documentos de identidad</h3>
+          <p>Eviten publicar fotos de su cédula, pasaporte o cualquier documento oficial.</p>
         </div>
-      </div>
-    </section>
+      </label>
+    </div>
+  </section>
 
-    <!-- Columna Derecha: Checklist interactivo -->
-    <section>
-      <h2>Cómo proteger sus datos</h2>
-      
-      <div class="checklist-panel">
-        <span class="tarjeta-tag">Interactive</span>
-
-        <label class="check-card">
-          <input type="checkbox" checked>
-          <span class="checkbox-custom"></span>
-          <div class="texto-paso">
-            <h3>Revisen la privacidad de sus redes</h3>
-            <p>Limiten quién puede ver y descargar sus fotos y videos.</p>
-          </div>
-        </label>
-
-        <label class="check-card">
-          <input type="checkbox">
-          <span class="checkbox-custom"></span>
-          <div class="texto-paso">
-            <h3>Cuidado con retos virales de voz o rostro</h3>
-            <p>Muchas apps que "transforman" tu cara o voz almacenan esos datos sin que sea claro para qué se usan después.</p>
-          </div>
-        </label>
-
-        <label class="check-card">
-          <input type="checkbox">
-          <span class="checkbox-custom"></span>
-          <div class="texto-paso">
-            <h3>No compartan documentos de identidad</h3>
-            <p>Eviten publicar fotos de su cédula, pasaporte o cualquier documento oficial.</p>
-          </div>
-        </label>
-
-        <div class="caja-clave" style="margin-top: 12px; text-align: center;">
-          <p style="font-size: 13px;">Prueben hacer clic en cada casilla del checklist — se marca visualmente.</p>
-        </div>
-      </div>
-    </section>
-
+  <div class="siguiente">
+    <span>Vean ejemplos reales de cómo estos datos se usan en casos de suplantación.</span>
+    <a href="casos-simulados.html">Ver Casos Simulados →</a>
   </div>
 </main>
+
+
 
 
 
