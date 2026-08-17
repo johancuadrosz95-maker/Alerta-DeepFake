@@ -194,6 +194,7 @@ main h2 .numero {
 main p {
   color: rgba(232,234,237,0.75);
   margin-bottom: 14px;
+  text-align: justify;
 }
 
 main strong {
