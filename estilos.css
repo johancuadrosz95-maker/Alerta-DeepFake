@@ -277,3 +277,16 @@ main strong {
 
 
 
+<<<<<<< HEAD
+=======
+.btn-reportar {
+  display: block;
+  text-align: center;
+  background: #ef5b6f;
+  color: white;
+  font-weight: 700;
+  padding: 14px 20px;
+  margin: 16px 20px;
+  border-radius: 30px;
+}
+>>>>>>> b893afa2f35fec22d238d13ffb1a2c701f317278
