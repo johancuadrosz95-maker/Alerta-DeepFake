@@ -159,20 +159,59 @@
 
 
 <script>
-    const btnMenu =document.getElementById('btnMenu');
-    const sidebar=document.getElementById('sidebar');
-    btnMenu.addEventListener('click',function(){
+    const btnMenu = document.getElementById('btnMenu');
+    const sidebar = document.getElementById('sidebar');
+    btnMenu.addEventListener('click', function() {
         sidebar.classList.toggle('abierto');
     });
-    
-    const links=sidebar.querySelectorAll('a');
-    links.forEach(function(link){
-    link.addEventListener('click',function(){
-        sidebar.classList.remove('abierto');
+
+    const links = sidebar.querySelectorAll('a');
+    links.forEach(function(link) {
+        link.addEventListener('click', function() {
+            sidebar.classList.remove('abierto');
+        });
     });
-});
 
+    // === Lógica del test de exposición ===
+    const respuestas = {};
 
+    document.querySelectorAll('.switch-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const pregunta = this.closest('.test-pregunta');
+            pregunta.querySelectorAll('.switch-btn').forEach(b => b.classList.remove('activo'));
+            this.classList.add('activo');
+            respuestas[pregunta.dataset.p] = this.dataset.val;
+        });
+    });
+
+    document.getElementById('btnCalcular').addEventListener('click', function() {
+        const total = document.querySelectorAll('.test-pregunta').length;
+        if (Object.keys(respuestas).length < total) {
+            alert('Por favor responde todas las preguntas.');
+            return;
+        }
+        const siCount = Object.values(respuestas).filter(v => v === 'si').length;
+        const resultado = document.getElementById('resultado');
+        const nivelTexto = document.getElementById('nivelTexto');
+        const mensajeTexto = document.getElementById('mensajeTexto');
+
+        resultado.classList.remove('bajo', 'medio', 'alto');
+
+        if (siCount <= 1) {
+            resultado.classList.add('bajo');
+            nivelTexto.textContent = 'Exposición baja';
+            mensajeTexto.textContent = 'Tienes buenos hábitos de privacidad. Sigue revisando la configuración de tus redes periódicamente.';
+        } else if (siCount <= 3) {
+            resultado.classList.add('medio');
+            nivelTexto.textContent = 'Exposición media';
+            mensajeTexto.textContent = 'Hay algunos puntos que podrías reforzar. Revisa el checklist de abajo para reducir tu riesgo.';
+        } else {
+            resultado.classList.add('alto');
+            nivelTexto.textContent = 'Exposición alta';
+            mensajeTexto.textContent = 'Varios de tus hábitos actuales facilitan que tus datos sean usados sin tu permiso. Aplica el checklist cuanto antes.';
+        }
+        resultado.classList.add('visible');
+    });
 </script>
 
 
