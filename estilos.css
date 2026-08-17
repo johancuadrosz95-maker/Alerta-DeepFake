@@ -282,7 +282,6 @@ main strong {
   margin: 24px auto;
 }
 
-<<<<<<< HEAD
 .tarjeta-tag {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;
@@ -291,7 +290,6 @@ main strong {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
-=======
 .paso {
     display: flex;
     align-items: flex-start;
@@ -333,7 +331,10 @@ main strong {
     line-height: 1.5;
 }
 
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
 
-
->>>>>>> 5b8dee34f89adeaee6a7011636e58a19bb0f53b4
