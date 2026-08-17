@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta DeepFake</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="grid-bg"></div>
+    <div class="glow"></div>
+    <header>
+        <button id="btnMenu" class="menu-btn">☰</button>
+       <span class="logo">Alerta DeepFake</span>
+    </header>
+   <nav id="sidebar">
+  <a href="index.html">Inicio</a>
+
+ <span class="categoria">Aprende</span>
+  <a href="iagenerativa.html">Inteligencia Artificial Generativa</a>
+  <a href="queesdeepfake.html">¿Qué es un Deepfake?</a>
+  <a href="clascontfals.html">Clasificacion de contenido falso</a>
+  <a href="datospb.html">Datos Personales y Biometrios</a>
+
+  <span class="categoria">Detecta y Actua</span>
+  <a href="casossimulados.html">Casos Simulados</a>
+  <a href="listaverificacion.html">Lista de Verificacion</a>
+  <a href="rutaactuacion.html">Ruta de Actuacion</a>
+  <a href="reportarcaso.html" class="btn-reportar">🛡️ Reportar un Caso</a>
+  
+  <span class="categoria">Marco Legal</span>
+  <a href="normativacolombiana.html">Normativa Colombiana</a>
+  <a href="recomendacionesseguridad.html">Recomendaciones de Seguridad</a>
+</nav>
+
+
+<main>
+  <div class="kicker">MARCO LEGAL</div>
+  <h1>Normativa Colombiana</h1>
+  <p class="intro">
+    Colombia cuenta con un marco legal específico para proteger la información y los datos
+    personales frente a delitos informáticos. Conocer estas leyes ayuda a entender qué
+    conductas son ilegales y qué consecuencias tienen.
+  </p>
+
+  <section>
+    <h2>La ley principal: Ley 1273 de 2009</h2>
+    <p>
+      Esta ley modificó el Código Penal colombiano para crear un nuevo bien jurídico protegido:
+      <strong>la información y los datos</strong>. Fue creada para proteger integralmente los
+      sistemas que usan tecnologías de la información y las comunicaciones, tipificando nueve
+      delitos informáticos específicos.
+    </p>
+  </section>
+
+  <!-- ... el resto de secciones que ya les compartí antes ... -->
+
+</main>
+
+
+
+
+
+
+<script>
+    const btnMenu =document.getElementById('btnMenu');
+    const sidebar=document.getElementById('sidebar');
+    btnMenu.addEventListener('click',function(){
+        sidebar.classList.toggle('abierto');
+    });
+    
+    const links=sidebar.querySelectorAll('a');
+    links.forEach(function(link){
+    link.addEventListener('click',function(){
+        sidebar.classList.remove('abierto');
+    });
+});
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
