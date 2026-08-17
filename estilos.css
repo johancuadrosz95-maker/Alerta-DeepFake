@@ -309,22 +309,6 @@ main strong {
     font-weight: bold;
 }
 
-.texto-paso {
-    flex: 1;
-}
-
-.texto-paso h3 {
-    margin: 0 0 8px 0;
-    color: white;
-    font-size: 24px;
-}
-
-.texto-paso p {
-    margin: 0;
-    color: #b8bdc7;
-    font-size: 18px;
-    line-height: 1.5;
-}
 
 .video-container video {
     width: 100%;
@@ -373,5 +357,183 @@ main strong {
   .fila-deteccion { gap: 12px; }
   .fila-deteccion .icono { font-size: 18px; width: 28px; }
 }
+
+/* Layout en Grid para dos columnas usando tus estilos globales */
+.grid-datos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .grid-datos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Caja contenedora del ícono en la columna izquierda */
+.icon-box {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background: rgba(76, 201, 240, 0.08);
+  border: 1px solid rgba(76, 201, 240, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+/* Ajuste de tipografía dentro de las secciones para alinearse a tus clases */
+.texto-paso h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.texto-paso p {
+  font-size: 13px;
+  color: rgba(232, 234, 237, 0.65);
+}
+
+/* Panel contenedor interactivo con borde azul neón */
+.checklist-panel {
+  background: rgba(27, 42, 74, 0.4);
+  border: 1px solid var(--cyan);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 0 15px rgba(76, 201, 240, 0.1);
+}
+
+/* Tarjetas individuales dentro del checklist */
+.check-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px;
+  background: var(--panel);
+  border: 1px solid rgba(76, 201, 240, 0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.check-card:hover {
+  border-color: var(--cyan);
+}
+
+/* Ocultar checkbox nativo y personalizarlo con tu color --cyan */
+.check-card input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid rgba(232, 234, 237, 0.4);
+  border-radius: 4px;
+  margin-top: 2px;
+  transition: all 0.2s ease;
+}
+
+.check-card input[type="checkbox"]:checked + .checkbox-custom {
+  background-color: var(--cyan);
+  border-color: var(--cyan);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b0e14' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-size: 14px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.check-card input[type="checkbox"]:checked ~ .texto-paso h3 {
+  color: var(--cyan);
+}
+
+/* ===== Test de exposición ===== */
+.test-panel {
+  background: rgba(27,42,74,0.4);
+  border: 1px solid var(--cyan);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 0 15px rgba(76,201,240,0.1);
+  margin-top: 18px;
+}
+
+.test-pregunta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(76,201,240,0.12);
+}
+.test-pregunta:last-of-type { border-bottom: none; }
+.test-pregunta p { font-size: 14px; color: var(--text); margin-bottom: 0; }
+
+.switch-group { display: flex; gap: 6px; flex-shrink: 0; }
+.switch-btn {
+  background: transparent;
+  border: 1px solid rgba(76,201,240,0.3);
+  color: rgba(232,234,237,0.6);
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.switch-btn.activo {
+  background: var(--cyan);
+  color: var(--bg);
+  border-color: var(--cyan);
+  font-weight: bold;
+}
+
+.resultado {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 8px;
+  text-align: center;
+  display: none;
+}
+.resultado.visible { display: block; }
+.resultado .nivel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.resultado .msg { font-size: 14px; color: var(--text); }
+
+.resultado.bajo { background: rgba(76,201,240,0.08); border: 1px solid var(--cyan); }
+.resultado.bajo .nivel { color: var(--cyan); }
+.resultado.medio { background: rgba(255,180,80,0.08); border: 1px solid #ffb450; }
+.resultado.medio .nivel { color: #ffb450; }
+.resultado.alto { background: rgba(239,91,111,0.1); border: 1px solid #ef5b6f; }
+.resultado.alto .nivel { color: #ef5b6f; }
+
+.btn-calcular {
+  margin-top: 18px;
+  width: 100%;
+  background: var(--cyan);
+  color: var(--bg);
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-calcular:hover { opacity: 0.9; }
+
+
+
 
 
