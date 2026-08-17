@@ -309,22 +309,6 @@ main strong {
     font-weight: bold;
 }
 
-.texto-paso {
-    flex: 1;
-}
-
-.texto-paso h3 {
-    margin: 0 0 8px 0;
-    color: white;
-    font-size: 24px;
-}
-
-.texto-paso p {
-    margin: 0;
-    color: #b8bdc7;
-    font-size: 18px;
-    line-height: 1.5;
-}
 
 .video-container video {
     width: 100%;
