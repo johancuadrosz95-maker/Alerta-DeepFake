@@ -222,7 +222,8 @@ main strong {
 
 .tarjeta .icono { font-size: 24px; margin-bottom: 8px; }
 
-.tarjeta h3 {
+.tarjeta h2 {
+  text-align: center;
   font-size: 15px;
   margin-bottom: 6px;
 }
