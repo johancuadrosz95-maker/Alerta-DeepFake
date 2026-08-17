@@ -56,8 +56,11 @@ width: 250px; ;
 height:100vh ;
 background:#1B2A4A ;
 padding-top: 60px;
+padding-botton: 20px;
+overflow-y: auto;
 transform: translateX(-100%);
 transition:transform 0.3s ease ;
+z-index: 20;
 
         }
         nav#sidebar.abierto{
@@ -70,6 +73,9 @@ header {
   gap: 16px;
   padding: 16px 24px;
   background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 30;
 }
 
     .logo {
