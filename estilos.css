@@ -274,18 +274,19 @@ main strong {
   opacity: 0.85;
 }
 
-
-
-
-
-.btn-reportar {
-  display: block;
-  text-align: center;
-  background: #ef5b6f;
-  color: white;
-  font-weight: 700;
-  padding: 14px 20px;
-  margin: 16px 20px;
-  border-radius: 30px;
+.tarjeta-caso {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 500px;
+  margin: 24px auto;
 }
 
+.tarjeta-tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}

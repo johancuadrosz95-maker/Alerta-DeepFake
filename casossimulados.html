@@ -6,6 +6,8 @@
     <title>Alerta DeepFake</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
+
+
 <body>
     <div class="grid-bg"></div>
     <div class="glow"></div>
@@ -32,6 +34,21 @@
   <a href="#">Normativa Colombiana</a>
   <a href="#">Recomendaciones de Seguridad</a>
 </nav>
+<main>
+<div class="tarjeta-caso"> 
+  <span class="tarjeta-tag">Caso 01</span> 
+  <h3>Video de un funcionario anunciando una medida falsa</h3> 
+  <p>Un video circula en redes mostrando a un funcionario público anunciando una medida económica que nunca se tomó. El audio fue clonado a partir de discursos reales.</p> 
+
+  <div class="video-container">
+    <video id="deepfakeVideo" controls>
+      <source src="videocaso1/deepfake_medida_economica_simulacion_h264.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
+  </div>
+
+</div>
+</main>
 <script>
     
     const btnMenu =document.getElementById('btnMenu');
