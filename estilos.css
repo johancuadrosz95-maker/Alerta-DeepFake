@@ -200,16 +200,6 @@ main strong {
   color: var(--text);
 }
 
-.grid-tarjetas {
-    display: flex;
-    flex-direction: column; /* Alinea los elementos uno debajo de otro */
-    gap: 20px;               /* Espacio entre cada tarjeta */
-    max-width: 800px;        /* Ancho máximo recomendado para que no abarquen toda la pantalla */
-    margin: 0 auto;          /* Centra la lista en la página */
-}
-
-
-
 .tarjeta {
   text-align: justify;
   background: rgba(76,201,240,0.04);
@@ -228,6 +218,8 @@ main strong {
   font-size: 13px;
   margin-bottom: 0;
 }
+
+
 
 .caja-clave {
   background: rgba(76,201,240,0.06);
@@ -338,6 +330,48 @@ main strong {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* ===== Lista horizontal de señales de detección ===== */
+.lista-deteccion {
+  margin-top: 18px;
+}
+
+.fila-deteccion {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 4px;
+  border-bottom: 1px solid rgba(76,201,240,0.12);
+}
+
+.fila-deteccion:last-child {
+  border-bottom: none;
+}
+
+.fila-deteccion .icono {
+  font-size: 22px;
+  flex-shrink: 0;
+  width: 36px;
+  text-align: center;
+}
+
+.fila-deteccion .contenido h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.fila-deteccion .contenido p {
+  font-size: 13px;
+  color: rgba(232,234,237,0.65);
+  margin-bottom: 0;
+}
+
+@media (max-width: 500px) {
+  .fila-deteccion { gap: 12px; }
+  .fila-deteccion .icono { font-size: 18px; width: 28px; }
 }
 
 
