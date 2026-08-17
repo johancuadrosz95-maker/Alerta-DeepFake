@@ -282,6 +282,7 @@ main strong {
   margin: 24px auto;
 }
 
+<<<<<<< HEAD
 .tarjeta-tag {
   display: inline-block;
   font-family: 'JetBrains Mono', monospace;
@@ -290,3 +291,49 @@ main strong {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
+=======
+.paso {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    margin: 30px 0;
+}
+
+.numero {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+
+    border: 2px solid #159eaa;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.texto-paso {
+    flex: 1;
+}
+
+.texto-paso h3 {
+    margin: 0 0 8px 0;
+    color: white;
+    font-size: 24px;
+}
+
+.texto-paso p {
+    margin: 0;
+    color: #b8bdc7;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+
+
+
+>>>>>>> 5b8dee34f89adeaee6a7011636e58a19bb0f53b4
