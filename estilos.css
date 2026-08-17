@@ -214,6 +214,7 @@ main strong {
 }
 
 .tarjeta {
+  text-align: center;
   background: rgba(76,201,240,0.04);
   border: 1px solid rgba(76,201,240,0.15);
   border-radius: 8px;
