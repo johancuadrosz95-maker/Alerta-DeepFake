@@ -533,8 +533,15 @@ main strong {
   cursor: pointer;
 }
 .btn-calcular:hover { opacity: 0.9; }
+.grid-casos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0 24px;
+}
 
-
-
-
-
+.video-container img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
