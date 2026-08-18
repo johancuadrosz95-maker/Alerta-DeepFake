@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta DeepFake</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="grid-bg"></div>
+    <div class="glow"></div>
+    <header>
+        <button id="btnMenu" class="menu-btn">☰</button>
+        <span class="logo">Alerta DeepFake</span>
+    </header>
+    <nav id="sidebar">
+        <a href="index.html">Inicio</a>
+
+        <span class="categoria">Aprende</span>
+        <a href="iagenerativa.html">Inteligencia Artificial Generativa</a>
+        <a href="queesdeepfake.html">¿Qué es un Deepfake?</a>
+        <a href="clascontfals.html">Clasificacion de contenido falso</a>
+        <a href="datospb.html">Datos Personales y Biometrios</a>
+
+        <span class="categoria">Detecta y Actua</span>
+        <a href="casossimulados.html">Casos Simulados</a>
+        <a href="listaverificacion.html">Lista de Verificacion</a>
+        <a href="rutaactuacion.html">Ruta de Actuacion</a>
+        <a href="reportaruncaso.html" class="btn-reportar">🛡️ Reportar un Caso</a>
+
+        <span class="categoria">Marco Legal</span>
+        <a href="normativacolombiana.html">Normativa Colombiana</a>
+        <a href="recomendacionesseguridad.html">Recomendaciones de Seguridad</a>
+        <a href="Administrador.html">Administrador</a>
+    </nav>
+
+    <main>
+        <section class="reportar" id="formulario">
+            <p class="etiqueta">DETECTA Y ACTÚA</p>
+            <h1>🛡️ Reportar un Caso</h1>
+            <p class="parrafo-info">Cuéntanos qué encontraste. Tu reporte se remite a la entidad competente según el tipo de caso.</p>
+
+            <div class="caja-confidencial">
+                <p>🔒 Tu información es confidencial y solo se usa para dar seguimiento a este reporte.</p>
+            </div>
+
+            <label for="campoNombre">Nombre Completo</label>
+            <input type="text" id="campoNombre" placeholder="Ej: Shirley Álvarez">
+
+            <label for="campoEmail">Correo electrónico</label>
+            <input type="email" id="campoEmail" placeholder="Ej: laura@correo.com">
+
+            <label for="campoTelefono">Teléfono <span>(opcional)</span></label>
+            <input type="tel" id="campoTelefono" placeholder="Ej: 3005744321">
+
+          <h2>¿Qué tipo de contenido falso encontraste?</h2>
+      <div class="opciones-tipo">
+       <div class="tarjeta-tipo" data-tipo="imagen">📸 Imagen</div>
+      <div class="tarjeta-tipo" data-tipo="audio">🎧 Audio</div>
+      <div class="tarjeta-tipo" data-tipo="video">📹 Video</div>
+      <div class="tarjeta-tipo" data-tipo="perfil">👤 Perfil Falso</div>
+    </div>
+
+            <label for="campoDescripcion">Describe lo que ocurrió</label>
+            <textarea id="campoDescripcion" placeholder="Cuéntanos con el mayor detalle posible qué pasó, cuándo y dónde lo viste..."></textarea>
+
+            <label for="inputArchivo">Evidencia (opcional)</label>
+            <div class="zona-carga" id="dropZone">
+                <span>📎</span>
+                <p><strong>Haz clic para subir</strong> o arrastra tus archivos aquí</p>
+                <input type="file" id="inputArchivo" multiple>
+            </div>
+            <div id="listaArchivos"></div>
+
+            <button type="button" class="btn-enviar" id="btnEnviar">Enviar reporte</button>
+        </section>
+
+        <section class="confirmacion" id="confirmacion" style="display:none;">
+            <div class="check">✓</div>
+            <h2>Reporte recibido</h2>
+            <p>Tu caso fue registrado con el número:</p>
+            <p class="numero-caso" id="numeroCaso">#0000</p>
+            <p>Puedes seguir los siguientes pasos en la sección "Ruta de Actuación".</p>
+        </section>
+    </main>
+
+    <script>
+        // ---------- Sidebar ----------
+        const btnMenu = document.getElementById('btnMenu');
+        const sidebar = document.getElementById('sidebar');
+        btnMenu.addEventListener('click', function () {
+            sidebar.classList.toggle('abierto');
+        });
+        sidebar.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                sidebar.classList.remove('abierto');
+            });
+        });
+
+        // ---------- Selector de tipo de caso ----------
+        let tipoSeleccionado = null;
+document.querySelectorAll('.tarjeta-tipo').forEach(function (card) {
+    card.addEventListener('click', function () {
+        document.querySelectorAll('.tarjeta-tipo').forEach(c => c.classList.remove('activo'));
+        this.classList.add('activo');
+        tipoSeleccionado = this.dataset.tipo;
+    });
+});
+
+        // ---------- Zona de carga de archivos ----------
+        const dropZone = document.getElementById('dropZone');
+        const inputArchivo = document.getElementById('inputArchivo');
+        const listaArchivos = document.getElementById('listaArchivos');
+        let archivos = [];
+
+        inputArchivo.addEventListener('change', function () {
+            Array.from(this.files).forEach(f => archivos.push(f.name));
+            renderArchivos();
+        });
+
+        function renderArchivos() {
+            listaArchivos.innerHTML = archivos.map((nombre, i) =>
+                `<div>📄 ${nombre} <span data-i="${i}" class="quitar">✕</span></div>`
+            ).join('');
+            document.querySelectorAll('.quitar').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    archivos.splice(this.dataset.i, 1);
+                    renderArchivos();
+                });
+            });
+        }
+
+        // ---------- Enviar el formulario ----------
+        document.getElementById('btnEnviar').addEventListener('click', function () {
+            const nombre = document.getElementById('campoNombre').value;
+            const email = document.getElementById('campoEmail').value;
+            const telefono = document.getElementById('campoTelefono').value;
+            const descripcion = document.getElementById('campoDescripcion').value;
+
+            if (!nombre || !email || !tipoSeleccionado) {
+                alert('Por favor completa nombre, correo y tipo de caso.');
+                return;
+            }
+
+            const params = new URLSearchParams();
+            params.append('nombre', nombre);
+            params.append('email', email);
+            params.append('telefono', telefono);
+            params.append('tipoContenido', tipoSeleccionado);
+            params.append('descripcion', descripcion);
+            params.append('archivos', archivos.join(','));
+
+            fetch("https://localhost:44392/WSNormativas.asmx/WSGuardarReporte", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: params
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.exito) {
+                    document.getElementById('formulario').style.display = 'none';
+                    document.getElementById('confirmacion').style.display = 'block';
+                    document.getElementById('numeroCaso').textContent = '#' + data.reporteId;
+                }
+            })
+            .catch(error => {
+                console.error('Error al guardar el reporte:', error);
+                alert('Hubo un problema al enviar el reporte. Intenta de nuevo.');
+            });
+        });
+    </script>
+</body>
+</html>
