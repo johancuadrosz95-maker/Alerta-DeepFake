@@ -633,7 +633,7 @@ input, textarea {
 .zona-carga strong {
   color: #22d3ee;
 }
-.btn-enviar {
+.btnEnviar {
   background-color: #22d3ee;
   color: #0d1117;
   border: none;
@@ -644,4 +644,66 @@ input, textarea {
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
+}
+
+/* Estado seleccionado de la tarjeta de tipo de caso */
+.tarjeta-tipo {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tarjeta-tipo:hover {
+  border-color: rgba(34, 211, 238, 0.4);
+}
+.tarjeta-tipo.activo {
+  background-color: rgba(34, 211, 238, 0.1);
+  border-color: #22d3ee;
+  color: #22d3ee;
+  font-weight: bold;
+}
+
+/* Lista de archivos adjuntos */
+#listaArchivos {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#listaArchivos div {
+  display: flex;
+  justify-content: space-between;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #e8eaed;
+}
+.quitar {
+  color: #ef5b6f;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Pantalla de confirmación */
+.confirmacion {
+  text-align: center;
+  padding: 60px 20px;
+}
+.confirmacion .check {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: rgba(34, 211, 238, 0.1);
+  border: 2px solid #22d3ee;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+  margin: 0 auto 20px;
+  color: #22d3ee;
+}
+.confirmacion h2 { color: #f5f5f5; margin-bottom: 10px; }
+.confirmacion p { color: #9ca3af; margin-bottom: 6px; }
+.numero-caso {
+  font-family: 'JetBrains Mono', monospace;
+  color: #22d3ee;
+  font-weight: bold;
+  font-size: 18px;
 }
