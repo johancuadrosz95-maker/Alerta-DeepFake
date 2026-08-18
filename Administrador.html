@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta DeepFake</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="grid-bg"></div>
+    <div class="glow"></div>
+    <header>
+        <button id="btnMenu" class="menu-btn">☰</button>
+        <span class="logo">Alerta DeepFake</span>
+    </header>
+    <nav id="sidebar">
+        <a href="index.html">Inicio</a>
+
+        <span class="categoria">Aprende</span>
+        <a href="iagenerativa.html">Inteligencia Artificial Generativa</a>
+        <a href="queesdeepfake.html">¿Qué es un Deepfake?</a>
+        <a href="clascontfals.html">Clasificacion de contenido falso</a>
+        <a href="datospb.html">Datos Personales y Biometrios</a>
+
+        <span class="categoria">Detecta y Actua</span>
+        <a href="casossimulados.html">Casos Simulados</a>
+        <a href="listaverificacion.html">Lista de Verificacion</a>
+        <a href="rutaactuacion.html">Ruta de Actuacion</a>
+        <a href="reportaruncaso.html" class="btn-reportar">🛡️ Reportar un Caso</a>
+
+        <span class="categoria">Marco Legal</span>
+        <a href="normativacolombiana.html">Normativa Colombiana</a>
+        <a href="recomendacionesseguridad.html">Recomendaciones de Seguridad</a>
+        <a href="Administrador.html">Administrador</a>
+    </nav>
+
+    <main>
+        <h1>Panel de Administrador</h1>
+        <input type="text" id="buscarNombre" placeholder="Buscar por nombre...">
+
+        <table class="tablausuarios" id="tablaUsuarios">
+            <thead>
+                <tr>
+                    <th>UsuarioId</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                    <th>FechaRegistro</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla"></tbody>
+        </table>
+    </main>
+
+    <script>
+        // ---------- Sidebar ----------
+        const btnMenu = document.getElementById('btnMenu');
+        const sidebar = document.getElementById('sidebar');
+        btnMenu.addEventListener('click', function () {
+            sidebar.classList.toggle('abierto');
+        });
+        sidebar.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                sidebar.classList.remove('abierto');
+            });
+        });
+
+        // ---------- Traer usuarios desde SQL Server ----------
+        fetch("https://localhost:44392/WSNormativas.asmx/WSListadoUsuarios", {
+            method: "GET"
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log("Usuarios recibidos:", data);
+            const cuerpoTabla = document.getElementById("cuerpoTabla");
+
+            data.forEach(usuario => {
+                const fila = document.createElement("tr");
+                fila.innerHTML = `
+                    <td>${usuario.UsuarioId}</td>
+                    <td>${usuario.Nombre}</td>
+                    <td>${usuario.Email}</td>
+                    <td>${usuario.Telefono}</td>
+                    <td>${usuario.FechaRegistro}</td>
+                `;
+                cuerpoTabla.appendChild(fila);
+            });
+        })
+        .catch(error => {
+            console.error("Error al cargar usuarios:", error);
+        });
+
+        // ---------- Buscador ----------
+        const buscarNombre = document.getElementById("buscarNombre");
+        buscarNombre.addEventListener("input", function () {
+            const texto = buscarNombre.value.toLowerCase();
+            const filas = document.querySelectorAll("#tablaUsuarios tbody tr");
+            filas.forEach(function (fila) {
+                const nombre = fila.cells[1].textContent.toLowerCase();
+                fila.style.display = nombre.includes(texto) ? "" : "none";
+            });
+        });
+    </script>
+</body>
+</html>
