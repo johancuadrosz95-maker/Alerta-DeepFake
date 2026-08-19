@@ -24,55 +24,83 @@
 
   <span class="categoria">Detecta y Actua</span>
   <a href="casossimulados.html">Casos Simulados</a>
-  <a href="listaverificacion.html">Lista de Verificacion</a>
-  <a href="rutaactuacion.html">Ruta de Actuacion</a>
+  <a href="listaverificacion">Lista de Verificacion</a>
+  <a href="rutaactuacion">Ruta de Actuacion</a>
   <a href="reportaruncaso.html" class="btn-reportar">🛡️ Reportar un Caso</a>
   
   <span class="categoria">Marco Legal</span>
   <a href="normativacolombiana.html">Normativa Colombiana</a>
-  <a href="recomendacionesseguridad.html">Recomendaciones de Seguridad</a>
-  <a href="Administrador.html">Administrador</a>
-
+  <a href="recomendacionesseguridad">Recomendaciones de Seguridad</a>
 </nav>
+<body>
 <main>
-  <center><h1>Alerta Deepfake</h1></center>
-  <center><p>No todo lo que ves es lo que parece</p></center>
-    <div class="face-wrap">
-  <svg viewBox="0 0 220 220">
-  <defs>
-  <clipPath id="mitad-izquierda">
-    <rect x="0" y="0" width="110" height="220" />
-  </clipPath>
-</defs>
 
-<!-- LADO REAL (izquierda) -->
-<g clip-path="url(#mitad-izquierda)">
-  <path d="M 110 30 A 80 80 0 0 0 110 190" stroke="var(--text)" stroke-width="2" fill="none" />
-  <circle cx="80" cy="95" r="6" fill="var(--text)" />
-  <circle cx="140" cy="95" r="6" fill="var(--text)" />
-  <path d="M 80 140 Q 110 160 140 140" stroke="var(--text)" stroke-width="2" fill="none" />
-</g>
+    <div class="ruta-pasos">
 
-<!-- LADO SINTÉTICO (derecha) -->
-<g class="face-synth">
-  <path d="M 110 30 A 80 80 0 0 1 110 190" stroke="var(--cyan)" stroke-width="2" fill="none" />
-  <path d="M 120 90 L 132 90 M 128 84 L 128 100" stroke="var(--cyan)" stroke-width="1.4" />
-  <path d="M 140 145 L 165 148 M 150 152 L 160 145" stroke="var(--cyan)" stroke-width="1.2" stroke-linecap="round" />
-  <line x1="110" y1="30" x2="110" y2="190" stroke="var(--cyan)" stroke-width="1" stroke-dasharray="2 4" />
-</g>
+  <div class="paso">
+    <div class="paso-num">01</div>
+    <div class="paso-contenido">
+      <h3>Preserva la evidencia</h3>
+      <p>Guarda capturas de pantalla, enlaces, audios y metadatos del contenido. No borres nada, aunque quieras hacerlo desaparecer.</p>
+    </div>
+  </div>
 
-</svg>
-<defs>
-  <clipPath id="mitad-izquierda">
-    <rect x="0" y="0" width="110" height="220" />
-  </clipPath>
-</defs>
+  <div class="paso">
+    <div class="paso-num">02</div>
+    <div class="paso-contenido">
+      <h3>Denuncia ante la autoridad competente</h3>
+      <p>Reporta el caso a través del CAI Virtual de la Policía Nacional o del Sistema Nacional de Denuncia Virtual "A Denunciar".</p>
+      <p>CAI Virtual — caivirtual.policia.gov.co / A Denunciar — adenunciar.policia.gov.co</p>
+    </div>
+  </div>
+
+  <div class="paso">
+    <div class="paso-num">03</div>
+    <div class="paso-contenido">
+      <h3>Si la víctima es menor de edad</h3>
+      <p>Comunícate de inmediato a la Línea 141 del ICBF, o reporta a través del portal Te Protejo si el contenido involucra a un niño, niña o adolescente.</p>
+      <p>ICBF — Línea 141 / Te Protejo — teprotejo.org</p>
+    </div>
+  </div>
+
 </div>
+
+
 </main>
 
 
 
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
+    
     const btnMenu =document.getElementById('btnMenu');
     const sidebar=document.getElementById('sidebar');
     btnMenu.addEventListener('click',function(){
@@ -88,9 +116,3 @@
 
 
 </script>
-
-
-
-
-</body>
-</html>
