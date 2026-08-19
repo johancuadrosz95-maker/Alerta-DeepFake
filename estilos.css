@@ -767,3 +767,22 @@ input, textarea {
   flex-shrink: 0;
   width: 40px;
 }
+
+.recomendaciones {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.recomendacion {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.recomendacion-icono {
+  font-size: 24px;
+  flex-shrink: 0;
+}

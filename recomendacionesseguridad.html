@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scalbuenoe=1.0">
+    <title>Alerta DeepFake</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="grid-bg"></div>
+    <div class="glow"></div>
+    <header>
+        <button id="btnMenu" class="menu-btn">☰</button>
+       <span class="logo">Alerta DeepFake</span>
+    </header>
+   <nav id="sidebar">
+  <a href="index.html">Inicio</a>
+
+  <span class="categoria">Aprende</span>
+  <a href="iagenerativa.html">Inteligencia Artificial Generativa</a>
+  <a href="queesdeepfake.html">¿Qué es un Deepfake?</a>
+  <a href="clascontfals.html">Clasificacion de contenido falso</a>
+  <a href="datospb.html">Datos Personales y Biometrios</a>
+
+  <span class="categoria">Detecta y Actua</span>
+  <a href="casossimulados.html">Casos Simulados</a>
+  <a href="listaverificacion.html">Lista de Verificacion</a>
+  <a href="rutaactuacion.html">Ruta de Actuacion</a>
+  <a href="reportaruncaso.html" class="btn-reportar">🛡️ Reportar un Caso</a>
+  
+  <span class="categoria">Marco Legal</span>
+  <a href="normativacolombiana.html">Normativa Colombiana</a>
+  <a href="recomendacionesseguridad.html">Recomendaciones de Seguridad</a>
+  <a href="Administrador.html">Administrador</a>
+
+</nav>
+<main>
+<div class="recomendaciones">
+
+  <div class="recomendacion">
+    <span class="recomendacion-icono">🔍</span>
+    <div class="recomendacion-texto">
+      <h3>Verifica la fuente antes de compartir</h3>
+      <p>Confirma si el medio o la cuenta que publica el contenido es oficial y confiable.</p>
+    </div>
+  </div>
+
+</div>
+<div class="recomendacion">
+  <span class="recomendacion-icono">🔒</span>
+  <div class="recomendacion-texto">
+    <h3>Activa la verificación en dos pasos</h3>
+    <p>En tus redes y correo, para dificultar que alguien use tu cuenta para difundir contenido falso.</p>
+  </div>
+</div>
+
+<div class="recomendacion">
+  <span class="recomendacion-icono">🎙️</span>
+  <div class="recomendacion-texto">
+    <h3>Cuida tu huella biométrica</h3>
+    <p>Piensa antes de subir muchos videos o audios tuyos hablando claramente en público; son el material que se usa para clonar voz y rostro.</p>
+  </div>
+</div>
+
+<div class="recomendacion">
+  <span class="recomendacion-icono">🗝️</span>
+  <div class="recomendacion-texto">
+    <h3>Usa una "palabra clave" familiar</h3>
+    <p>Acuerda con tu familia una palabra secreta para confirmar identidad en llamadas urgentes pidiendo dinero.</p>
+  </div>
+</div>
+
+<div class="recomendacion">
+  <span class="recomendacion-icono">⚙️</span>
+  <div class="recomendacion-texto">
+    <h3>Configura la privacidad de tus redes sociales</h3>
+    <p>Limita quién puede ver y descargar tus fotos y videos.</p>
+  </div>
+</div>
+
+<div class="recomendacion">
+  <span class="recomendacion-icono">🚩</span>
+  <div class="recomendacion-texto">
+    <h3>Reporta y denuncia</h3>
+    <p>Contenido sospechoso en la plataforma donde lo veas, además de las autoridades si te afecta directamente.</p>
+  </div>
+</div>
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    
+    const btnMenu =document.getElementById('btnMenu');
+    const sidebar=document.getElementById('sidebar');
+    btnMenu.addEventListener('click',function(){
+        sidebar.classList.toggle('abierto');
+    });
+    
+    const links=sidebar.querySelectorAll('a');
+    links.forEach(function(link){
+    link.addEventListener('click',function(){
+        sidebar.classList.remove('abierto');
+    });
+});
+
+
+</script>
