@@ -207,6 +207,13 @@ main strong {
   border: 1px solid rgba(76,201,240,0.15);
   border-radius: 8px;
   padding: 16px;
+  .audio-container {
+  margin-top: 16px;
+}
+
+.audio-container audio {
+  width: 100%;
+}
 }
 
 .tarjeta .icono { font-size: 24px; margin-bottom: 8px; }
